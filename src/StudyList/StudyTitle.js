@@ -1,12 +1,18 @@
-import React, {useState} from "react";
+import React from "react";
 import styled,{css}  from "styled-components";
 
 // 제목을 화면에 표시
-// 목차한테 props를 받아 제목으로 나타내려 함
+// StudyList에서 props를 받아 제목으로 나타내려 함
+
+const Sort = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+`;
 
 const Title = styled.span`
-    width: 157px;
-    height: 71px;
+    position: absolute;
+    top: 154px;
 
     color: #000;
     font-family: NanumSquareRound;
@@ -19,6 +25,8 @@ const Title = styled.span`
 export function StudyTitle(props) {
 
     return(
-        <Title>{props.title}</Title>
-    )
+        <Sort>
+            <Title>{props.title}</Title>
+        </Sort>
+    );
 }
