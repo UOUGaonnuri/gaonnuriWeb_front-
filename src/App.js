@@ -1,24 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+// 이런식으로 자신의 js파일을 import해서 아래처럼 추가시키면 됩니다!
+import { StudyMain } from './StudyList/StudyMain';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StudyMain></StudyMain>
   );
 }
 
