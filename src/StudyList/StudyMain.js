@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
-import { StudyTitle } from "./StudyTitle";
-import { StudyContents } from "./StudyContents";
+import { StudyList } from "./StudyList";
+import { StudyContents } from "./StudyContents"
 
 // js파일을 합침
 
@@ -9,8 +9,8 @@ export function StudyMain(props) {
     
     return(
         <div>
-        <StudyTitle></StudyTitle>
+        <StudyList></StudyList>
         <StudyContents></StudyContents>
         </div>
-    )
+    );
 }

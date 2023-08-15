@@ -1,43 +1,162 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React from "react";
+import styled,{css}  from "styled-components";
 
-// 목차를 화면에 표시
 
-const Contents = styled.div`
+const Sort = styled.div`
+  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 `;
+const ContentFlex = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+const ContentImage = styled.div`
+    position: relative;
+    width: 362px;
+    height: 195px;
+    top : 370px;
+    left : -230px;
+    border-radius: 20px;
+    background: #D9D9D9;
+`
+const ContentTitle = styled.div`
+    position: relative;
+    top : 385px;
+    left : -355px;
+    color: #000;
+    font-family: NanumGothic;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    
+    // 글자가 늘어났을 때 오른쪽으로만 이동
+    width: 100px; //고정된 너비
+    white-space: nowrap; // 줄 바꿈 금지
+`
+const ContentNum = styled.div`
+    position: relative;
+    top : 405px;
+    left : -355px;
+    color: #000;
+    font-family: NanumGothic;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    
+    // 글자가 늘어났을 때 오른쪽으로만 이동
+    width: 100px;
+    white-space: nowrap; 
+`
+const ContentActive = styled.div`
+    position: relative;
+    top : 375px;
+    left : -95px;
+    color: #000;
+    font-family: NanumGothic;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+`
+const ContentActiveImage = styled.div`
+    position: relative;
+    top : 348px;
+    left : -160px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #46DA00;
+`
+const ContentTopDiv = styled.div`
+    margin-top:40px;
+`
+function Content(){
+    return(
+        <Sort>
+            <ContentFlex>
+            <ContentImage></ContentImage>
+            <ContentTitle>{"알고리즘 스터디"}</ContentTitle>
+            <ContentNum>{15}개의 스터디</ContentNum>
+            <ContentActive>활동중</ContentActive>
+            <ContentActiveImage></ContentActiveImage>
+            </ContentFlex>
+            <ContentTopDiv></ContentTopDiv>
+        </Sort>
+    );
+}
 
-const Content = styled.div`
-  margin-right: 30px;
-  margin-top: 296px;
-  color: ${({ isSelected }) => (isSelected ? '#A2A2A2' : '#000')};
-  
-  font-family: NanumSquareRound;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  cursor: pointer; /* 커서를 포인터로 변경하여 클릭 가능한 상태로 만듦 */
-`;
+export function ALLContents() {
+
+    return(
+        <div>
+            <Content></Content>
+            <Content></Content>
+        </div>
+    );
+}
+
+export function WebAPPContents() {
+
+    return(
+        <div>
+            <Content></Content>
+            <Content></Content>
+        </div>
+    );
+}
+
+export function MetaContents() {
+
+    return(
+        <div>
+            <Content></Content>
+            <Content></Content>
+        </div>
+    );
+}
+
+export function AIContents() {
+
+    return(
+        <div>
+            <Content></Content>
+            <Content></Content>
+        </div>
+    );
+}
+
+export function CSContents() {
+
+    return(
+        <div>
+            <Content></Content>
+            <Content></Content>
+        </div>
+    );
+}
+
+export function StContents() {
+
+    return(
+        <div>
+            <Content></Content>
+            <Content></Content>
+        </div>
+    );
+}
 
 export function StudyContents() {
-  const [selectedContent, setSelectedContent] = useState(null);
 
-  const handleClick = (content) => {
-    setSelectedContent(content);
-  };
+    // 라우팅으로 적용하는거 생각해보기
 
-  return (
-    <div>
-      <Contents>
-        <Content isSelected={selectedContent === "모두보기"} onClick={() => handleClick("모두보기")}>모두보기</Content>
-        <Content isSelected={selectedContent === "웹/앱"} onClick={() => handleClick("웹/앱")}>웹/앱</Content>
-        <Content isSelected={selectedContent === "메타버스"} onClick={() => handleClick("메타버스")}>메타버스</Content>
-        <Content isSelected={selectedContent === "AI"} onClick={() => handleClick("AI")}>AI</Content>
-        <Content isSelected={selectedContent === "CS"} onClick={() => handleClick("CS")}>CS</Content>
-        <Content isSelected={selectedContent === "학술"} onClick={() => handleClick("학술")}>학술</Content>
-      </Contents>
-    </div>
-  );
-}
+    return(
+        <div>
+            <ALLContents />
+        </div>
+    );
+  }
