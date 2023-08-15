@@ -28,4 +28,4 @@
 | Web Front | 김현지 | 울산대학교 |  |
 | Web Front | 이하은 | 울산대학교 |  |
 | Web Front | 정진이 | 울산대학교 | https://github.com/myeanji |
-| Web Front | 최지안 | 울산대학교 |  |
+| Web Front | 최지안 | 울산대학교 | @Ji-ny  |
