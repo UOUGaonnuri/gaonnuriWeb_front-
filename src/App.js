@@ -10,6 +10,9 @@ import './App.css';
 // 저 같은 경우는 function StudyMain에 전부 모아둬서 해당 함수를 추가시켰습니다.
 import { StudyMain } from './StudyList/StudyMain';
 
+//이하은
+import { StudyDetailMain } from "./study_detail/js/Components/StudyDetailMain";
+
 function App() {
   return (
     <Router>
@@ -17,6 +20,7 @@ function App() {
       <Route path="/studymain" element={<StudyMain />} /> {/*스터디 목록*/}
       {/* path는 http://localhost:3000/studymain <- 이런식으로 :3000 뒤에 붙일 경로를 마음대로 지으면 됩니다. */}
       {/* 하다가 잘 모르겠으면 카톡 보내주셔도 됩니다 -현지- */}
+      <Route path="/studymain/detail" element={<StudyDetailMain/>}/>
     </Routes>
     </Router>
   );
