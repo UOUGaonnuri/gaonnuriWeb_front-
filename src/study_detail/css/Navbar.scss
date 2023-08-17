@@ -1,3 +1,23 @@
-.Navbar{
-
+.ComNavbar{
+    height: 7vh;
+    width: 100%;
+    border-bottom: solid black 2px;
+    margin-bottom: -2px;
+    ul{
+        margin-top: 3vh;
+        align-items: center;
+        align-content: center;
+        display: flex;
+        .gaon_logo{
+            margin-left: 140px;
+            margin-right: 70px;
+            height: 50px;
+            width: auto;
+        }
+        .navui{
+            font-size: 24px;
+            margin-left: 70px;
+            margin-right: 70px;
+        }
+    }
 }

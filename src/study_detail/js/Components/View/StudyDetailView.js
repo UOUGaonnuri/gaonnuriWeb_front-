@@ -7,7 +7,17 @@ import { StudyDetailContents } from "./StudyDetailContents";
 import '../../../css/StudyDetailView.scss';
 
 export function StudyDetailView(){
-    const [study_pages,setStudyPages] = useState([{title:"스터디페이지1",contents:`# 마크다운1
+    const [study_pages,setStudyPages] = useState([{title:"스터디페이지1",contents:`# 마크다운 1
+# 마크다운 1
+# 마크다운 1
+# 마크다운 1
+# 마크다운 1
+# 마크다운 1
+# 마크다운 1
+# 마크다운 1
+# 마크다운 1
+# 마크다운 1
+# 마크다운 1
 # 마크다운 1
 # 마크다운 1
 # 마크다운 1
