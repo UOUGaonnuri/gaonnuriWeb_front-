@@ -11,7 +11,7 @@ import './App.css';
 import { StudyMain } from './StudyList/StudyMain';
 
 //이하은
-import { StudyDetailMain } from "./study_detail/js/Components/StudyDetailMain";
+import { StudyDetailMain } from "./study_detail/js/StudyDetailMain";
 
 function App() {
   return (
