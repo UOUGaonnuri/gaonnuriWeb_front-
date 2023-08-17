@@ -1,6 +1,24 @@
+@font-face {
+  font-family: "NSRR";
+  src: url(./font/NanumFontSetup_TTF_SQUARE_ROUND/NanumSquareRoundR.ttf) format("truetype");
+}
+@font-face {
+  font-family: "NSRB";
+  src: url(./font/NanumFontSetup_TTF_SQUARE_ROUND/NanumSquareRoundB.ttf) format("truetype");
+}
+@font-face {
+  font-family: "NSREB";
+  src: url(./font/NanumFontSetup_TTF_SQUARE_ROUND/NanumSquareRoundEB.ttf) format("truetype");
+}
+@font-face {
+  font-family: "NSRL";
+  src: url(./font/NanumFontSetup_TTF_SQUARE_ROUND/NanumSquareRoundL.ttf) format("truetype");
+}
+
 *{
   margin: 0;
   padding: 0;
-}
+  font-family: "NSRR";
+ }
 
 

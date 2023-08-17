@@ -6,7 +6,7 @@ import gfm from 'remark-gfm';
 
 export function StudyDetailMain(){
     return(
-        <div className="StudyDetailMain">
+        <div className="ComStudyDetailMain">
             <div className="Navbar"><Navbar/></div>
             <div className="StudyDetailView"><StudyDetailView/></div>
         </div>

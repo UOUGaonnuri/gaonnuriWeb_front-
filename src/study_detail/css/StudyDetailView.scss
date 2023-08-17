@@ -1,17 +1,20 @@
 
 .ComponentStudyDetailView{
-    height: 100vh;
+    margin-top: 5vh;
+    height: 80vh;
     width: 100%;
     display: flex;
+    margin-bottom: 5vh;
+    
     .StudyDetailSidebar{
-        width: 20%;
-        margin: 0%;
-        border: 0;
+        border-right: solid black 3px;
+        width: 15%;
     }
-
     .StudyDetailContents{
-        height: 80%;
-        width: 80%;
+
+        padding-left: 40px;
+        height: 100%;
+        width: 85%;
         overflow-y: scroll;
     }
 }
