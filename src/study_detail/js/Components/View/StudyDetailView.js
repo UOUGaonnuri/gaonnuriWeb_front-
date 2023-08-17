@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+
 import { StudyDetailSidebar } from "./StudyDetailSidebar";
 import { StudyDetailContents } from "./StudyDetailContents";
 
 
 
 export function StudyDetailView(){
-    const [study_pages,setStudyPages] = useState([{title:"스터디페이지1",contents:"마크다운1"},{title:"스터디페이지2",contents:"마크다운2"},{title:"스터디페이지3",contents:"마크다운3"}]);
+    const [study_pages,setStudyPages] = useState([{title:"스터디페이지1",contents:`# 마크다운1`},{title:"스터디페이지2",contents:`# 마크다운2`},{title:"스터디페이지3",contents:'# 마크다운3'}]);
     const [study_page_code,setStudyPageCode] = useState(0);
     const [study_name,setStudyName] = useState("스터디명");
     
