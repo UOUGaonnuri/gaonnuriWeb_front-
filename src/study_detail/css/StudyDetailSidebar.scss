@@ -1,9 +1,22 @@
-.StudyDetailSidebar{
-    margin: 0;
+.ComStudyDetailSidebar{
+    width: 100%;
+    
     .study_name{
-        font-size: 30px;
+        font-size: 50px;
+        padding-left: 40px;
+        font-family: NanumSquareRoundOTF;
     }
     .study_pages{
-        font-size: 20px;
+        margin-left: 50px;
+        .page_title{
+            color: #000;
+            font-family: NanumSquareRoundOTF;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-top: 20px;
+        }  
     }
 }
+
