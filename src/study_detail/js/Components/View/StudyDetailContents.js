@@ -21,9 +21,10 @@ export function StudyDetailContents(props){
             <div className="title">{props.study_pages[props.study_page_code].title}</div>
         </div>
         <div className="content">
-            {mode==0 ? <StudyDetailMarkdownViewer content={content} setContent={setContent} mode={mode} setMode={setMode}/> :<StudyDetailMarkdownFixer content={content} setContent={setContent} mode={mode} setMode={setMode}/>}
-                
-                
+            {mode==0 ?
+            <div className="viewer"><StudyDetailMarkdownViewer content={content} setContent={setContent} mode={mode} setMode={setMode}/></div>
+            :<div className="fixer"><StudyDetailMarkdownFixer content={content} setContent={setContent} mode={mode} setMode={setMode}/></div>}
+                  
         </div>
     </div>);
 }
