@@ -5,10 +5,12 @@ import MDEditor from "@uiw/react-md-editor";
 import { propTypes } from "react-bootstrap/esm/Image";
 //import "./StudyDetailContnts.scss";
 
-export function StudyDetailMarkdownFixer (){
+
+export function StudyDetailMarkdownFixer (props){
+    
     return(<div className="ComStudyDetailMarkdownFixer">
-        Fixer
-        {/* <MDEditor onChange={}/> */}
+        <div className="CheckBtn" onClick={()=>{props.setMode(0)}}>확인</div>
+        <MDEditor value={props.content} onChange={props.setContent}/>
     </div>)
 }
 
