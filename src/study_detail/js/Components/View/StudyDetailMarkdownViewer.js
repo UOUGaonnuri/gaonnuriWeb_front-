@@ -8,8 +8,9 @@ import { propTypes } from "react-bootstrap/esm/Image";
 
 export function StudyDetailMarkdownViewer (props){
 
-    return(<div className="ComStudyDetailMarkdownFixer">
+    return(
+    <div className="ComStudyDetailMarkdownFixer">
         <div className="fixBtn" onClick={()=>{props.setMode(1)}}>수정</div>
-        <MDEditor.Markdown source={props.content} style={{ whiteSpace: 'pre-wrap' }} />
+        <div className="mdviewer" data-color-mode="light"><MDEditor.Markdown source={props.content} style={{ whiteSpace: 'pre-wrap' }} /></div>
     </div>)
 }

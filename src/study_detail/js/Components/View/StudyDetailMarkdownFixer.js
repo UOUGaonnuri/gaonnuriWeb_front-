@@ -10,7 +10,9 @@ export function StudyDetailMarkdownFixer (props){
     
     return(<div className="ComStudyDetailMarkdownFixer">
         <div className="CheckBtn" onClick={()=>{props.setMode(0)}}>확인</div>
-        <MDEditor value={props.content} onChange={props.setContent}/>
+        <div data-color-mode="light">
+            <MDEditor height={400} value={props.content} onChange={props.setContent}/>
+        </div>
     </div>)
 }
 
