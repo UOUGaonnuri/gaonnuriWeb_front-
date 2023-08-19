@@ -12,11 +12,13 @@ import { StudyMain } from './StudyList/StudyMain';
 
 //이하은
 import { StudyDetailMain } from "./study_detail/js/StudyDetailMain";
+import Main from "./main/iamMain";
 
 function App() {
   return (
     <Router>
     <Routes>
+      <Route path="/gaonnuri" element={<Main />} />
       <Route path="/studymain" element={<StudyMain />} /> {/*스터디 목록*/}
       {/* path는 http://localhost:3000/studymain <- 이런식으로 :3000 뒤에 붙일 경로를 마음대로 지으면 됩니다. */}
       {/* 하다가 잘 모르겠으면 카톡 보내주셔도 됩니다 -현지- */}
