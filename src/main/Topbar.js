@@ -7,9 +7,9 @@ function Topbar() {
         <div className="topBar">
             <div className="goToMain">
                 <div className="gaonImage">
-                    <Link to="/" style={{textDecoration:"none", color:"black"}}><img src={smallTiger} alt='smallTiger'></img></Link>
+                    <Link to="/gaonnuri" style={{textDecoration:"none", color:"black"}}><img src={smallTiger} alt='smallTiger'></img></Link>
                 </div>
-                <Link to="/" style={{textDecoration:"none", color:"black"}}>가온누리</Link> 
+                <Link to="/gaonnuri" style={{textDecoration:"none", color:"black"}}>가온누리</Link> 
             </div>
             <div className="goToIntroduce">
                 <span>소개</span>
