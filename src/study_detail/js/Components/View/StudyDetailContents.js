@@ -17,8 +17,7 @@ export function StudyDetailContents(props){
 
     return(<div className="ComStudyDetailContnts">
         <div className="top">
-            
-            <div className="title">{props.study_pages[props.study_page_code].title}</div>
+            <div className="title" onClick={console.log(typeof(content),content)}>{props.study_pages[props.study_page_code].title}</div>
         </div>
         <div className="content">
             {mode==0 ?

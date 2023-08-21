@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { StudyDetailView } from "../js/Components/View/StudyDetailView";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import {Navbar} from "../js/Ui/Navbar";
+import {Topbar} from "./Ui/Topbar";
 import gfm from 'remark-gfm';
 
 export function StudyDetailMain(){
     return(
         <div className="ComStudyDetailMain">
-            <div className="Navbar"><Navbar/></div>
+            <div className="Topbar"><Topbar/></div>
             <div className="StudyDetailView"><StudyDetailView/></div>
         </div>
     );
