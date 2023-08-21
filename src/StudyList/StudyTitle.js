@@ -15,7 +15,7 @@ const Title = styled.span`
     top: 154px;
 
     color: #000;
-    font-family: NanumSquareRound;
+    font-family: "NSRB";
     font-size: 70px;
     font-style: normal;
     font-weight: 700;

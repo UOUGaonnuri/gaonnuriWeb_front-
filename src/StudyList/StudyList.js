@@ -16,7 +16,7 @@ const List = styled.div`
   top: 296px;
   color: ${({ isSelected }) => (isSelected ? '#000' : '#A2A2A2')};
   
-  font-family: NanumSquareRound;
+  font-family: "NSRR";
   font-size: 30px;
   font-style: normal;
   font-weight: 400;
