@@ -7,38 +7,15 @@ import pytorch from "./image/image 20.png";
 import spring from "./image/image 19.png";
 import reactLogo from "./image/image 17.png";
 import kotlin from "./image/image 16.png";
-import smallTiger from "./image/인쇄용-1 1.png";
 import programmers from "./image/image 29.png";
 import nodeJs from "./image/image 18.png";
 import './iamMain.css';
-import { Link } from "react-router-dom";
+import Topbar from "./Topbar";
 
 function Main() {
   return (
     <div className="main">
-      <div className="topBar">
-        <div className="goToMain">
-          <Link to="/gaonnuri"><img src={smallTiger} alt='smallTiger'></img></Link>
-        </div>
-        <div className="goToIntroduce">
-          <span>소개</span>
-        </div>
-        <div className="goToFeed">
-          <span>게시판</span>
-        </div>
-        <div className="goToProject">
-          <span>프로젝트</span>
-        </div>
-        <div className="goToStudy">
-        <Link to="/studymain">스터디</Link>
-        </div>
-        <div className="goToMember">
-          <span>멤버</span>
-        </div>
-        <div className="goToTrophy">
-          <span>수상내역</span>
-        </div>
-      </div>
+      <Topbar />
       <div className="mainTop">
         <img src={tiger} alt='gaonnuri'></img>
         <span className="topFirst">가온누리</span>
