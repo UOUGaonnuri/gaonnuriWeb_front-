@@ -11,17 +11,19 @@ import { StudyDetailMarkdownViewer } from "./StudyDetailMarkdownViewer";
 //스크롤 기능 추가하기
 export function StudyDetailContents(props){
 
-    const [fix,setFix] = useState(false)
+    const [mode,setMode] = useState(0);
+    const [content,setContent] = useState("# 임시");
 
 
     return(<div className="ComStudyDetailContnts">
         <div className="top">
-            
             <div className="title">{props.study_pages[props.study_page_code].title}</div>
-            <div className="fixBtn" onClick={()=>{setFix(true)}}>수정하기</div>
         </div>
         <div className="content">
-                {fix ? <StudyDetailMarkdownFixer/> : <StudyDetailMarkdownViewer/>}
+            {mode==0 ?
+            <div className="viewer"><StudyDetailMarkdownViewer setContent={setContent} content={content} study_page_code = {props.study_page_code} study_pages={props.study_pages} setStudyPages={props.setStudyPages} mode={mode} setMode={setMode}/></div>
+            :<div className="fixer"><StudyDetailMarkdownFixer setContent={setContent} mode={mode} setMode={setMode} study_page_code = {props.study_page_code} study_pages={props.study_pages} setStudyPages={props.setStudyPages}/></div>}
+                  
         </div>
     </div>);
 }
