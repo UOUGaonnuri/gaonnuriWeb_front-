@@ -11,18 +11,18 @@ import { StudyDetailMarkdownViewer } from "./StudyDetailMarkdownViewer";
 //스크롤 기능 추가하기
 export function StudyDetailContents(props){
 
-    const [content,setContent] = useState("** HelloWolrd! **");
     const [mode,setMode] = useState(0);
+    const [content,setContent] = useState("# 임시");
 
 
     return(<div className="ComStudyDetailContnts">
         <div className="top">
-            <div className="title" onClick={console.log(typeof(content),content)}>{props.study_pages[props.study_page_code].title}</div>
+            <div className="title">{props.study_pages[props.study_page_code].title}</div>
         </div>
         <div className="content">
             {mode==0 ?
-            <div className="viewer"><StudyDetailMarkdownViewer content={content} setContent={setContent} mode={mode} setMode={setMode}/></div>
-            :<div className="fixer"><StudyDetailMarkdownFixer content={content} setContent={setContent} mode={mode} setMode={setMode}/></div>}
+            <div className="viewer"><StudyDetailMarkdownViewer setContent={setContent} content={content} study_page_code = {props.study_page_code} study_pages={props.study_pages} setStudyPages={props.setStudyPages} mode={mode} setMode={setMode}/></div>
+            :<div className="fixer"><StudyDetailMarkdownFixer setContent={setContent} mode={mode} setMode={setMode} study_page_code = {props.study_page_code} study_pages={props.study_pages} setStudyPages={props.setStudyPages}/></div>}
                   
         </div>
     </div>);
