@@ -12,6 +12,7 @@ import { StudyMain } from './StudyList/StudyMain';
 import { StudyDetailMain } from "./study_detail/js/StudyDetailMain";
 import Main from "./main/iamMain";
 import Awards from "./Awards/Awards";
+import { BackOfiiceMain } from "./Back_Office/js/BackOfficeMain";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/studymain" element={<StudyMain />} />
       <Route path="/studymain/detail" element={<StudyDetailMain/>}/>
       <Route path="/awards" element={<Awards/>}/>
+      <Route path="/back_office" element={<BackOfiiceMain/>}/>
     </Routes>
     </Router>
   );
