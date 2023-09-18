@@ -4,6 +4,7 @@ import trophy from "./trophy.png";
 import ReactMarkdown from 'react-markdown';
 import Topbar from "../main/Topbar";
 import axios from "axios";
+import TextareaAutosize from 'react-textarea-autosize';
 
 function Awards(){
 
@@ -11,6 +12,10 @@ function Awards(){
     const renderNewLine = (props) => <br key={props.key} />;
     const [awardsText, set_awardsText]  = useState("가온누리 **역대 수상내역** 기록입니다.");
     const [modifyMode, set_modifyMode] = useState(false); // 수정상태 확인 state
+    // inputModify 텍스트박스
+    const [inputModify, set_inputModify] = useState("");
+
+
 
     function awardsGet(){
         const url = "http://43.200.191.238:4000/api/awards/get";
@@ -20,22 +25,23 @@ function Awards(){
             console.log(response);
             console.log(response.data);
             set_awardsText(response.data.contents);
+            set_inputModify(response.data.contents);
         })
         .catch((error) => {
             console.error('Error(에러발생!): ', error);
         })
     }
-
     useEffect(()=>{
-        // 시작에useEffect 실행!
         awardsGet();
-    });
+    },[])
 
-    // inputModify 텍스트박스
-    const [inputModify, set_inputModify] = useState("");
+
+
+
     
     const saveInputModify = event => {
         set_inputModify(event.target.value);
+        
         // console.log(inputModify);
     }
 
@@ -84,7 +90,7 @@ function Awards(){
                     {modifyMode === true ? <button className="btn_all" onClick={() => {awardsToBackend(); set_modifyMode(false);}}>확인 </button>  : <></>}
                 </div> 
 
-                {modifyMode === true ? <textarea className="body_input" onChange={saveInputModify} value={inputModify} > </textarea> : <BodyDeatil ></BodyDeatil>}
+                {modifyMode === true ? <TextareaAutosize className="body_input" onChange={saveInputModify} value={inputModify}/>  : <BodyDeatil ></BodyDeatil>}
 
                 
 

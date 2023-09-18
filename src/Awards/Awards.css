@@ -72,15 +72,21 @@
 
 /* 수상내역 리스트 */
 .body_awards{
+    position: relative;
     background-color: rgba(120, 193, 243, 0.3);
-    width: 1210px;
-    height: 1416px;
-    border : 5px solid rgba(4, 16, 25, 0.3);
+    border-radius: 20px;
+    padding-bottom: 80px;
+    width: 80vw;
+    height: auto;
+    min-height: 1000px;
+    /* border : 5px solid rgba(4, 16, 25, 0.3); */
     
     stroke-width: 1px;
     stroke: #000;
     text-align: center;
     align-items: center;
+    margin-bottom: 300px;
+
 
     
 }
@@ -138,23 +144,17 @@
     white-space: pre-wrap;
 }
 
-.body_input{
+.body_input {
     margin-top: 50px;
-    width : 90%;
-    height: 85%;
+    width: 90%;
+    height: 80%; 
+    min-height: 800px;
     box-sizing: border-box;
-    padding: 80px 80px;
-
+    padding: 80px; /* `padding` 값을 포함하면서 유동적으로 높이 조정 */
     color: #000;
     font-family: NSRR;
     font-size: 50px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    
-    
-
-
-
-
 }
