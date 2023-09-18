@@ -1,17 +1,77 @@
 import React, { useState,useEffect } from "react";
-import styled from "styled-components";
 import css from "./Awards.css";
 import trophy from "./trophy.png";
 import ReactMarkdown from 'react-markdown';
+import Topbar from "../main/Topbar";
+import axios from "axios";
+
 function Awards(){
 
     // '\n' 문자열을 br 태그로 변경하는 함수
     const renderNewLine = (props) => <br key={props.key} />;
+    const [awardsText, set_awardsText]  = useState("가온누리 **역대 수상내역** 기록입니다.");
+    const [modifyMode, set_modifyMode] = useState(false); // 수정상태 확인 state
 
+    function awardsGet(){
+        const url = "http://43.200.191.238:4000/api/awards/get";
+        axios.get(url)
+        .then((response) => {
+
+            console.log(response);
+            console.log(response.data);
+            set_awardsText(response.data.contents);
+        })
+        .catch((error) => {
+            console.error('Error(에러발생!): ', error);
+        })
+    }
+
+    useEffect(()=>{
+        // 시작에useEffect 실행!
+        awardsGet();
+    });
+
+    // inputModify 텍스트박스
+    const [inputModify, set_inputModify] = useState("");
+    
+    const saveInputModify = event => {
+        set_inputModify(event.target.value);
+        // console.log(inputModify);
+    }
+
+    useEffect(() =>{
+        console.log(inputModify);
+    },[inputModify])
+    
+
+    // Post
+    function awardsToBackend(){
+        const url = "http://43.200.191.238:4000/api/awards/add";
+        const contents = { "contents" : inputModify };
+
+        axios.post(url,contents)
+        .then((response) => {
+            console.log(response);
+            console.log(response.data);
+            awardsGet();
+        })
+        .catch((error) => {
+            console.error('Error(에러발생!): ', error);
+        })
+    }
+
+    const BodyDeatil = () =>{
+        return(
+            <ReactMarkdown className = "body_detail" escapeHtml={false} renderers={{ text: renderNewLine }}>
+                {awardsText}
+            </ReactMarkdown>
+        );
+  
+    }
     return(
         <div className="screen_awards">
             <section className="nav_awards">
-                네비 부분임
+                <Topbar></Topbar>
             </section>
             <section className="header_awards">
                 <img className = "header_image"  src={trophy} alt='awards_image' />
@@ -20,15 +80,13 @@ function Awards(){
             </section>
             <section className="body_awards">
                 <div className="body_btns">
-                    <button className="btn_all">수정 </button>
-                    <button className="btn_all">확인 </button>
-                </div>
-                <p className="body_detail">
-                    <ReactMarkdown escapeHtml={false} renderers={{ text: renderNewLine }}>
-                        **2023** 상장1, 상장2
-                    </ReactMarkdown>                
+                    <button className="btn_all" onClick={() => {set_modifyMode(true);}} >수정 </button>
+                    {modifyMode === true ? <button className="btn_all" onClick={() => {awardsToBackend(); set_modifyMode(false);}}>확인 </button>  : <></>}
+                </div> 
 
-                </p>
+                {modifyMode === true ? <textarea className="body_input" onChange={saveInputModify} value={inputModify} > </textarea> : <BodyDeatil ></BodyDeatil>}
+
+                
 
             </section>
             
